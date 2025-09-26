@@ -11,7 +11,8 @@
   --text-custom-base: 16px;
   --text-custom-xl: 22px;
   --text-custom-2xl: 26px;
-  --text-custom-3xl: 38px;
+  --text-custom-3xl: 28px;
+  --text-custom-4xl: 38px;
   --text-custom-6xl: 64px;
   /* -- COLOR -- */
   --color-background: var(--background);
