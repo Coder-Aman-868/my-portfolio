@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sigmar+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900');
 @import "tailwindcss";
 
 :root {
   --background: #FEF6DD;
-
 }
 
 @theme inline {
@@ -12,6 +11,7 @@
   --text-custom-base: 16px;
   --text-custom-xl: 22px;
   --text-custom-2xl: 26px;
+  --text-custom-3xl: 38px;
   --text-custom-6xl: 64px;
   /* -- COLOR -- */
   --color-background: var(--background);
@@ -23,8 +23,7 @@
   --font-poppins: "Poppins", sans-serif;
   --font-merriweather-sans: "Merriweather Sans", sans-serif;
   --font-inter: "Inter", sans-serif;
-  --font-sigmar-one: "Sigmar One", sans-serif;
-   /* -- SHADOW -- */
+  /* -- SHADOW -- */
   --shadow-dart: 0px 0px 8px 2px #F8DF91;
   /* -- LINE HEIGHT -- */
   --spacing-100: 100%;

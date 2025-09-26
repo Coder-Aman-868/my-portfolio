@@ -28,12 +28,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} !bg-[#FEF6DD] !min-h-screen antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-background !min-h-screen antialiased`}
       >
-        <Header />
-        <ProfileSideBar />
-        {children}
-        <NavBar />
+        <div className="relative">
+          <Header />
+          <div className="max-w-[1512px] mx-auto overflow-hidden flex items-center justify-between gap-[52px]">
+            <ProfileSideBar />
+            {children}
+            <NavBar />
+          </div>
+        </div>
       </body>
     </html>
   );
