@@ -28,7 +28,7 @@ const ProfileSideBar = () => {
       if (window.innerWidth < 1536) {
         gsap.set(sidebarRef.current, { y: "-100%" });
       } else {
-        gsap.set(sidebarRef.current, { y: "0%" });
+        gsap.set(sidebarRef.current, { y: "-100%" });
       }
     }
   }, []);
@@ -43,15 +43,15 @@ const ProfileSideBar = () => {
   const myData = [
     { icon: "phone", text: "+91 786XX XX740", link: "tel:+91786XXXXX740" },
     { icon: "mail", text: "MyGmail@gmail.com", link: "mailto:MyGmail@gmail.com" },
-    { icon: "location", text: "Surat, Gujarat" },
-    { icon: "date", text: "12, NOV. 2003" },
+    { icon: "location", text: "Surat, Gujarat", link: "mailto:MyGmail@gmail.com" },
+    { icon: "date", text: "12, NOV. 2003" }
   ];
 
   return (
     <>
       {/* Rope for Mobile */}
       <div
-        className="fixed top-0 left-5 z-50 w-10 h-16 bg-gradient-to-b from-[#C2B293] to-[#B7A261] rounded-b-full cursor-pointer flex items-center justify-center shadow-md"
+        className={`fixed left-5 !z-[999] w-10 h-16 bg-gradient-to-b from-[#C2B293] to-[#B7A261] rounded-b-full cursor-pointer flex items-center justify-center duration-300 hover:top-0 shadow-md ${open ? "top-0" : "-top-8"}`}
         onClick={toggleSidebar}
       >
         <span className="w-1.5 h-12 bg-[#4B3D10] rounded-full"></span>
@@ -60,12 +60,12 @@ const ProfileSideBar = () => {
       {/* Sidebar Outer Gradient Border */}
       <div
         ref={sidebarRef}
-        className="fixed top-0 left-0 w-full z-40 
+        className="fixed top-0 left-0 w-full z-40 h-screen
         p-1 bg-gradient-to-br from-[#B7A261] via-[#C2B293] to-[#FFD580]
         -translate-y-full"
       >
         {/* Sidebar Inner Card */}
-        <div className="bg-[#1c1a17]/95 backdrop-blur-sm rounded-2xl p-8 flex flex-col gap-10">
+        <div className="bg-[#1c1a17]/95 backdrop-blur-sm rounded-2xl p-8 flex flex-col sm:gap-5 gap-3 h-full overflow-y-auto hide-scrollbar overflow-x-clip">
           {/* Profile */}
           <div className="flex flex-col items-center gap-4">
             <div className="relative p-[4px] rounded-full bg-gradient-to-tr from-[#B7A261] via-[#C2B293] to-[#FFD580] shadow-lg">
@@ -78,10 +78,10 @@ const ProfileSideBar = () => {
               />
             </div>
             <Heading className="text-xl font-bold text-center bg-gradient-to-r from-[#FFD580] via-[#C2B293] to-[#B7A261] bg-clip-text text-transparent">
-              Vishu K. Bhingradiya
+              Aman Siwach
             </Heading>
             <span className="text-sm text-[#B7A261] font-medium tracking-wide">
-              MERN + Flutter Dev.
+              Front-End-Developer
             </span>
           </div>
 
@@ -105,22 +105,23 @@ const ProfileSideBar = () => {
           </div>
 
           {/* Info */}
-          <div className="flex flex-col gap-3 mt-4">
+          <div className="flex flex-col gap-4 mt-5">
             {myData.map((data, i) => (
               <div
                 key={i}
-                className="flex items-center gap-3 p-3 rounded-lg bg-gradient-to-r from-[#22201d] to-[#1a1816] border border-[#2e2b28] hover:border-[#B7A261] hover:shadow-md hover:shadow-[#B7A261]/15 transition-all duration-300"
+                className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-[#22201d] to-[#1a1816] border border-[#2e2b28]
+                 hover:border-[#B7A261] hover:shadow-lg hover:shadow-[#B7A261]/20 transform hover:-translate-y-1 transition-all duration-300"
               >
                 {/* Icon Badge */}
-                <div className="p-2 rounded-lg bg-gradient-to-tr from-[#B7A261]/20 to-[#FFD580]/20 border border-[#3B3729]">
-                  <Icons icon={data.icon} className="!fill-[#FFD580]" />
+                <div className="p-3 rounded-xl bg-gradient-to-tr from-[#B7A261]/20 to-[#FFD580]/20 border border-[#3B3729] flex items-center justify-center">
+                  <Icons icon={data.icon} className="!fill-[#FFD580] w-5 h-5" />
                 </div>
 
                 {/* Text */}
                 {data.link ? (
                   <Link
                     href={data.link}
-                    className="text-sm sm:text-xs text-[#EADBC8] font-medium hover:text-[#FFD580] transition"
+                    className="text-sm sm:text-xs text-[#EADBC8] font-medium hover:text-[#FFD580] transition-colors duration-300"
                   >
                     {data.text}
                   </Link>
@@ -137,7 +138,7 @@ const ProfileSideBar = () => {
             View Resume
           </button>
         </div>
-      </div>
+      </div >
       <ConfettiCanvas />
     </>
   );

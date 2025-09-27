@@ -43,7 +43,7 @@ const Welcome: React.FC = () => {
   }, []);
 
   return (
-    <div className="border-[3px] border-[#4B3D10] bg-gradient-to-b from-black via-[#1c1a17] to-black rounded-[20px] p-6 w-full flex flex-col justify-center items-center h-[80vh] mb-10 overflow-hidden relative">
+    <div className="border-[3px]  bg-gradient-to-b from-black via-[#1c1a17] to-black rounded-[20px] p-6 w-full flex flex-col justify-center items-center h-[87vh] overflow-hidden relative">
       {/* Top Outline */}
       <h1
         ref={topRef}

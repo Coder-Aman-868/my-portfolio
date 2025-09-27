@@ -30,9 +30,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-background !min-h-screen antialiased`}
       >
-        <div className="relative">
+        <div className="relative px-5">
           <Header />
-          <div className="max-w-[1512px] mx-auto overflow-hidden 2xl:flex-row flex-col flex items-center justify-between w-full h-full gap-[52px] px-5">
+          <div className="overflow-y-auto overflow-x-clip w-full gap-[52px] h-[88vh] border-[3px] border-[#4B3D10] rounded-2xl hide-scrollbar">
             <ProfileSideBar />
             {children}
             <NavBar />

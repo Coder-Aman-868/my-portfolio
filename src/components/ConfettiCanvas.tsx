@@ -204,7 +204,7 @@ export default function ConfettiCanvas({
 
         createConfetti();
 
-        const duration = 3000; // animation lasts 3s
+        const duration = 8000; 
         const startTime = Date.now();
 
         const animate = () => {
