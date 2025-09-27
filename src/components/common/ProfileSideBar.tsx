@@ -6,6 +6,7 @@ import Image from "next/image";
 import Heading from "./Heading";
 import Link from "next/link";
 import Icons from "./Icons";
+import ConfettiCanvas from "../ConfettiCanvas";
 
 const ProfileSideBar = () => {
   const sidebarRef = useRef<HTMLDivElement>(null);
@@ -50,7 +51,7 @@ const ProfileSideBar = () => {
     <>
       {/* Rope for Mobile */}
       <div
-        className="fixed top-0 left-5 z-50 w-10 h-16 bg-gradient-to-b from-[#C2B293] to-[#B7A261] rounded-b-full cursor-pointer flex items-center justify-center shadow-md 2xl:hidden"
+        className="fixed top-0 left-5 z-50 w-10 h-16 bg-gradient-to-b from-[#C2B293] to-[#B7A261] rounded-b-full cursor-pointer flex items-center justify-center shadow-md"
         onClick={toggleSidebar}
       >
         <span className="w-1.5 h-12 bg-[#4B3D10] rounded-full"></span>
@@ -61,8 +62,7 @@ const ProfileSideBar = () => {
         ref={sidebarRef}
         className="fixed top-0 left-0 w-full z-40 
         p-1 bg-gradient-to-br from-[#B7A261] via-[#C2B293] to-[#FFD580]
-        -translate-y-full
-        2xl:translate-y-0 2xl:sticky 2xl:top-6 2xl:w-[320px] 2xl:rounded-2xl 2xl:shadow-2xl"
+        -translate-y-full"
       >
         {/* Sidebar Inner Card */}
         <div className="bg-[#1c1a17]/95 backdrop-blur-sm rounded-2xl p-8 flex flex-col gap-10">
@@ -138,6 +138,7 @@ const ProfileSideBar = () => {
           </button>
         </div>
       </div>
+      <ConfettiCanvas />
     </>
   );
 };
