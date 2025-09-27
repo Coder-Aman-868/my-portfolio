@@ -1,9 +1,9 @@
-import Wellcom from "@/components/Wellcom";
+import Welcome from "@/components/Welcome";
 
 export default function Home() {
   return (
-    <div>
-      <Wellcom />
-    </div>
+    <>
+      <Welcome />
+    </>
   );
 }

@@ -3,7 +3,6 @@ import React from 'react'
 import Icons from './Icons'
 
 const Header = () => {
-    
   return (
     <div className='px-5 py-9'>
         <div className="max-w-[1140px] mx-auto">

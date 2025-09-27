@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <div className="relative">
           <Header />
-          <div className="max-w-[1512px] mx-auto overflow-hidden flex items-center justify-between gap-[52px]">
+          <div className="max-w-[1512px] mx-auto overflow-hidden 2xl:flex-row flex-col flex items-center justify-between w-full h-full gap-[52px] px-5">
             <ProfileSideBar />
             {children}
             <NavBar />
