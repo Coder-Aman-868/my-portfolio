@@ -51,7 +51,7 @@ const ProfileSideBar = () => {
     <>
       {/* Rope for Mobile */}
       <div
-        className={`fixed left-5 !z-[999] w-10 h-16 bg-gradient-to-b from-[#C2B293] to-[#B7A261] rounded-b-full cursor-pointer flex items-center justify-center duration-300 hover:top-0 shadow-md ${open ? "top-0" : "-top-8"}`}
+        className={`fixed left-5 !z-[999]  w-10 h-16 bg-gradient-to-b from-[#C2B293] to-[#B7A261] rounded-b-full cursor-pointer flex items-center justify-center duration-300 hover:top-0 shadow-md ${open ? "top-0" : "-top-8"}`}
         onClick={toggleSidebar}
       >
         <span className="w-1.5 h-12 bg-[#4B3D10] rounded-full"></span>
@@ -60,7 +60,7 @@ const ProfileSideBar = () => {
       {/* Sidebar Outer Gradient Border */}
       <div
         ref={sidebarRef}
-        className="fixed top-0 left-0 w-full z-40 h-screen
+        className="fixed rounded-2xl top-0 left-0 w-full z-40 h-screen
         p-1 bg-gradient-to-br from-[#B7A261] via-[#C2B293] to-[#FFD580]
         -translate-y-full"
       >
@@ -86,23 +86,37 @@ const ProfileSideBar = () => {
           </div>
 
           {/* Social */}
-          <div className="flex justify-center gap-4 mt-2">
+          <div className="flex justify-center gap-6 mt-4 flex-wrap">
             {links.map((link, i) => (
-              <Link
-                key={i}
-                href={link.link}
-                className="relative group"
-              >
-                {/* Outer subtle gradient ring */}
-                <div className="p-[1.5px] rounded-full bg-gradient-to-tr from-[#FFD580] via-[#C2B293] to-[#B7A261] transition-transform group-hover:scale-110 duration-300">
+              <Link key={i} href={link.link} className="relative group">
+                {/* Outer animated gradient ring */}
+                <div className="
+        p-[2px] rounded-full
+        bg-gradient-to-tr from-[#FFD580] via-[#C2B293] to-[#B7A261]
+        bg-[length:200%_200%] bg-left-top
+        transition-all duration-1000 ease-in-out
+        group-hover:bg-right-bottom
+        group-hover:scale-110
+        shadow-lg
+      ">
                   {/* Inner circle */}
-                  <div className="p-2 bg-[#1c1a17] rounded-full flex items-center justify-center group-hover:bg-[#272421] transition">
-                    <Icons icon={link.icon} className="!fill-[#EADBC8] group-hover:!fill-[#FFD580] transition" />
+                  <div className="
+          p-4 bg-[#1c1a17] rounded-full flex items-center justify-center
+          transition-colors duration-500 ease-in-out
+          group-hover:bg-[#272421]
+          shadow-inner
+        ">
+                    {/* Icon */}
+                    <Icons
+                      icon={link.icon}
+                      className=" w-8 h-8 "
+                    />
                   </div>
                 </div>
               </Link>
             ))}
           </div>
+
 
           {/* Info */}
           <div className="flex flex-col gap-4 mt-5">
@@ -134,9 +148,20 @@ const ProfileSideBar = () => {
             ))}
           </div>
           {/* Resume Button */}
-          <button className="w-full bg-gradient-to-r from-[#B7A261] to-[#FFD580] py-3 rounded-xl font-bold text-base text-[#1c1a17] shadow-md hover:shadow-xl hover:scale-105 transition">
-            View Resume
+          <button className="relative w-full py-3 rounded-xl font-bold text-base text-[#1c1a17] overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-500 ease-in-out">
+            {/* Gradient Background */}
+            <span className="
+    absolute inset-0
+    bg-gradient-to-r from-[#FFD580] via-[#C2B293] to-[#B7A261]
+    bg-[length:200%_100%] bg-left
+    transition-all duration-500 ease-in-out
+    hover:bg-right
+  "></span>
+
+            {/* Button Text */}
+            <span className="relative z-10">View Resume</span>
           </button>
+
         </div>
       </div >
       <ConfettiCanvas />

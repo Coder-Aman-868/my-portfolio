@@ -9,7 +9,7 @@ const Paragraph = ({ children, className = '', ...props }: ParagraphProps) => {
     return (
         <p
             {...props}
-            className={`${className} text-custom-xs text-[#D1D1CD] font-medium leading-100 font-poppins`}
+            className={`${className} text-custom-xs text-white font-medium leading-100 font-poppins`}
         >
             {children}
         </p>
