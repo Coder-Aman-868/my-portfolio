@@ -1,0 +1,103 @@
+{
+    "portfolio": {
+        "title": "Portfolio Website",
+        "subtitle": "Next.js 15 • Tailwind CSS • GSAP",
+        "description": "A modern, responsive portfolio website showcasing cutting-edge web development with smooth animations, dark theme, and premium UI/UX design. Built with the latest technologies and optimized for performance.",
+        "longDescription": "This portfolio represents the pinnacle of modern web development, featuring seamless animations powered by GSAP, responsive design with Tailwind CSS, and cutting-edge Next.js 15 features. The site incorporates glassmorphism design principles, advanced micro-interactions, and optimized performance metrics.",
+        "mainImage": "https://s3-alpha.figma.com/hub/file/2852387665/f58b1b60-bbe2-4f80-8c40-7bdf1cbb5fd1-cover.png",
+        "gallery": [
+            "https://s3-alpha.figma.com/hub/file/2852387665/f58b1b60-bbe2-4f80-8c40-7bdf1cbb5fd1-cover.png",
+            "https://s3-alpha.figma.com/hub/file/2852387665/f58b1b60-bbe2-4f80-8c40-7bdf1cbb5fd1-cover.png",
+            "https://s3-alpha.figma.com/hub/file/2852387665/f58b1b60-bbe2-4f80-8c40-7bdf1cbb5fd1-cover.png"
+        ],
+        "technologies": [
+            "Next.js 15",
+            "TypeScript",
+            "Tailwind CSS",
+            "GSAP",
+            "React",
+            "Vercel"
+        ],
+        "features": [
+            "Responsive Design",
+            "Dark Theme",
+            "Smooth Animations",
+            "SEO Optimized",
+            "Performance Optimized",
+            "Modern UI/UX"
+        ],
+        "highlights": [
+            {
+                "title": "Lightning Fast",
+                "description": "Optimized for speed with Next.js 15",
+                "icon": "⚡"
+            },
+            {
+                "title": "Smooth Animations",
+                "description": "GSAP-powered micro-interactions",
+                "icon": "✨"
+            },
+            {
+                "title": "Responsive",
+                "description": "Perfect on all devices",
+                "icon": "📱"
+            }
+        ],
+        "liveUrl": "https://portfolio.example.com",
+        "githubUrl": "https://github.com/user/portfolio",
+        "status": "Completed",
+        "duration": "3 months",
+        "client": "Personal Project"
+    },
+    "shopapp": {
+        "title": "E-commerce Platform",
+        "subtitle": "React • Node.js • MongoDB • Stripe",
+        "description": "A full-stack e-commerce platform with modern UI, secure payments, inventory management, and comprehensive admin dashboard. Built for scalability and performance.",
+        "longDescription": "Complete e-commerce solution featuring user authentication, product catalog, shopping cart, secure payment processing with Stripe, order management, and comprehensive admin dashboard. Built with modern React patterns and scalable backend architecture.",
+        "mainImage": "https://s3-alpha.figma.com/hub/file/2852387665/f58b1b60-bbe2-4f80-8c40-7bdf1cbb5fd1-cover.png",
+        "gallery": [
+            "https://s3-alpha.figma.com/hub/file/2852387665/f58b1b60-bbe2-4f80-8c40-7bdf1cbb5fd1-cover.png",
+            "https://s3-alpha.figma.com/hub/file/2852387665/f58b1b60-bbe2-4f80-8c40-7bdf1cbb5fd1-cover.png",
+            "https://s3-alpha.figma.com/hub/file/2852387665/f58b1b60-bbe2-4f80-8c40-7bdf1cbb5fd1-cover.png"
+        ],
+        "technologies": [
+            "React",
+            "Node.js",
+            "MongoDB",
+            "Express",
+            "Stripe",
+            "JWT",
+            "Material-UI"
+        ],
+        "features": [
+            "User Authentication",
+            "Product Catalog",
+            "Shopping Cart",
+            "Payment Integration",
+            "Order Management",
+            "Admin Dashboard"
+        ],
+        "highlights": [
+            {
+                "title": "Secure Payments",
+                "description": "Stripe integration for safe transactions",
+                "icon": "🔒"
+            },
+            {
+                "title": "Real-time Updates",
+                "description": "Live inventory and order tracking",
+                "icon": "🔄"
+            },
+            {
+                "title": "Admin Dashboard",
+                "description": "Comprehensive management tools",
+                "icon": "📊"
+            }
+        ],
+        "liveUrl": "https://shopapp.example.com",
+        "githubUrl": "https://github.com/user/shopapp",
+        "status": "In Development",
+        "duration": "6 months",
+        "client": "Startup Client"
+    }
+}
