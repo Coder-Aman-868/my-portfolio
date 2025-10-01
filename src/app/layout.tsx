@@ -4,6 +4,7 @@ import "./globals.css";
 import NavBar from "@/components/common/NavBar";
 import ProfileSideBar from "@/components/common/ProfileSideBar";
 import Header from "@/components/common/Header";
+import AnimatedBackground from "@/components/animations/AnimatedBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-background !min-h-screen antialiased`}
       >
+        <AnimatedBackground />
         <div className="relative px-5">
           <Header />
           <div className="overflow-y-auto overflow-x-clip w-full gap-[52px] h-[88vh] border-[3px] border-[#4B3D10] rounded-2xl hide-scrollbar">

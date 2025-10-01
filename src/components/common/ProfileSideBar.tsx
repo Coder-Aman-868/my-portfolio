@@ -148,7 +148,7 @@ const ProfileSideBar = () => {
             ))}
           </div>
           {/* Resume Button */}
-          <button className="relative w-full py-3 rounded-xl font-bold text-base text-[#1c1a17] overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-500 ease-in-out">
+          <button className="relative w-full  min-h-[48px] py-3 rounded-xl font-bold text-base text-[#1c1a17] overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-500 ease-in-out">
             {/* Gradient Background */}
             <span className="
     absolute inset-0
