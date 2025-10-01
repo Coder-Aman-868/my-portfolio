@@ -268,7 +268,7 @@ const Skills = () => {
         {/* Title */}
         <h2
           ref={titleRef}
-          className="text-6xl md:text-7xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#B7A261] via-[#E4D4A7] to-[#B7A261]"
+          className="text-4xl md:text-5xl font-black font-poppins leading-125 text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#B7A261] via-[#E4D4A7] to-[#B7A261]"
           style={{ transformStyle: "preserve-3d" }}
         >
           My Skills

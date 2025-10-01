@@ -88,7 +88,10 @@ const About = () => {
       className="max-w-5xl mx-auto px-4 py-16 md:py-24 relative"
       style={{ perspective: "800px" }}
     >
-      <h2 className="about-title text-3xl md:text-4xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-[#B7A261] via-[#E4D4A7] to-[#FFD580]">
+      <h2
+        className="text-4xl md:text-5xl font-black leading-125 font-poppins text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#B7A261] via-[#E4D4A7] to-[#B7A261]"
+        style={{ transformStyle: "preserve-3d" }}
+      >
         About Me
       </h2>
       {/* Cards grid */}

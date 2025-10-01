@@ -139,6 +139,7 @@ const NavBar: React.FC = () => {
             y: 20,
             opacity: 0,
             scale: 0.8,
+
             duration: 0.3,
             stagger: 0.05,
             ease: "power2.in",
@@ -167,41 +168,33 @@ const NavBar: React.FC = () => {
 
         if (entering) {
             gsap.to(link, {
-                y: -8,
-                scale: 1.1,
                 duration: 0.3,
                 ease: "back.out(1.7)",
             });
 
             gsap.to(icon, {
-                scale: 1.2,
                 rotation: 5,
                 duration: 0.3,
                 ease: "back.out(1.7)",
             });
 
             gsap.to(text, {
-                y: -2,
                 duration: 0.3,
                 ease: "power2.out",
             });
         } else {
             gsap.to(link, {
-                y: 0,
-                scale: 1,
                 duration: 0.3,
                 ease: "power2.inOut",
             });
 
             gsap.to(icon, {
-                scale: 1,
                 rotation: 0,
                 duration: 0.3,
                 ease: "power2.inOut",
             });
 
             gsap.to(text, {
-                y: 0,
                 duration: 0.3,
                 ease: "power2.inOut",
             });
@@ -268,8 +261,8 @@ const NavBar: React.FC = () => {
                                     onMouseEnter={(e) => handleLinkHover(e, true)}
                                     onMouseLeave={(e) => handleLinkHover(e, false)}
                                     className={`relative flex flex-col items-center justify-center gap-2 px-4 py-3 rounded-xl transition-all duration-300 group ${isActive
-                                            ? "bg-gradient-to-br from-[#B7A261] to-[#E4D4A7] text-black"
-                                            : "text-gray-400 hover:text-white"
+                                        ? "bg-gradient-to-br from-[#B7A261] to-[#E4D4A7] text-black"
+                                        : "text-gray-400 hover:text-white"
                                         }`}
                                 >
                                     {/* Hover glow effect */}
@@ -324,7 +317,7 @@ const NavBar: React.FC = () => {
                     <div className="absolute inset-0 bg-[#B7A261]/30 blur-xl group-hover:bg-[#B7A261]/50 transition-all duration-300" />
 
                     {/* Button */}
-                    <div className="relative flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#B7A261] to-[#E4D4A7] rounded-full shadow-lg shadow-[#B7A261]/30 group-hover:shadow-2xl group-hover:shadow-[#B7A261]/50 group-hover:scale-110 transition-all duration-300">
+                    <div className="relative flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#B7A261] to-[#E4D4A7] rounded-full shadow-lg shadow-[#B7A261]/30 group-hover:shadow-2xl group-hover:shadow-[#B7A261]/50 transition-all duration-300">
                         {/* Animated chevron */}
                         <svg
                             className="w-6 h-6 text-black animate-bounce"
