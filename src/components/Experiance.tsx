@@ -87,8 +87,6 @@ const Experience: React.FC = () => {
       ref={containerRef}
       className="relative min-h-[92vh] w-full px-6 py-14 flex flex-col items-center justify-start"
       style={{
-        background:
-          "linear-gradient(131deg, #19120C 63%, #b7a26126 100%)",
         boxShadow: "0 0 60px 16px #B7A26113, 0 8px 30px 0 #000A",
       }}
     >

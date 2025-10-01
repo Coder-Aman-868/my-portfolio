@@ -541,7 +541,7 @@ const AnimatedBackground = () => {
                     height: "40px",
                     border: "2px solid rgba(183,162,97,0.5)",
                     borderRadius: "50%",
-                    zIndex: 10000,
+                    zIndex: 999999,
                     opacity: 0.6,
                 }}
             />
@@ -556,7 +556,7 @@ const AnimatedBackground = () => {
                     backgroundColor: "#B7A261",
                     borderRadius: "50%",
                     boxShadow: "0 0 10px #B7A261, 0 0 20px #B7A26180",
-                    zIndex: 10001,
+                    zIndex: 999999,
                 }}
             />
 
