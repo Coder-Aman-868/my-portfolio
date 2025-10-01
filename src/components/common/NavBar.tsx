@@ -17,125 +17,337 @@ const NavBar: React.FC = () => {
     const pathname = usePathname();
     const links: NavLink[] = [
         { name: "About", icon: "about", link: "/about" },
-        { name: "Experiance", icon: "experiance", link: "/experiance" },
+        { name: "Experience", icon: "experiance", link: "/experiance" },
         { name: "Projects", icon: "projects", link: "/projects" },
         { name: "Skills", icon: "skills", link: "/skills" },
         { name: "Contact", icon: "contact", link: "/contact-me" },
     ];
 
-    const linkRefs = useRef<HTMLDivElement[]>([]);
+    const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
     const containerRef = useRef<HTMLDivElement>(null);
-    const [expanded, setExpanded] = useState(false);
+    const activeIndicatorRef = useRef<HTMLDivElement>(null);
+    const toggleRef = useRef<HTMLDivElement>(null);
+    const [isVisible, setIsVisible] = useState(false);
     const hideTimeout = useRef<NodeJS.Timeout | null>(null);
 
-
-    const getHideDistance = () => {
-        if (typeof window === "undefined") return 90; // default
-
-        if (window.innerWidth < 640) return 180; // sm screens: hide more
-        if (window.innerWidth < 1024) return 100; // md screens
-        return 90; // lg screens
-    };
-
-
-    // Initial animation on page load
+    // Initial setup - hide navbar
     useEffect(() => {
-        if (!containerRef.current) return;
-
-        gsap.set(containerRef.current, { y: getHideDistance() }); // start hidden
-
-        const tl = gsap.timeline({
-            onComplete: () => {
-                // After animation, auto-hide
-                hideNavbar();
-            },
-        });
-
-        tl.to(containerRef.current, { y: -30, duration: 0.5, ease: "power3.out" });
-        tl.from(linkRefs.current, { opacity: 0, y: 20, stagger: 0.15, duration: 0.6, ease: "power3.out" }, "-=0.3");
+        if (containerRef.current) {
+            gsap.set(containerRef.current, {
+                y: 100,
+                scale: 0.8,
+                opacity: 0,
+                display: "none",
+            });
+        }
     }, []);
+
+    // Toggle button entrance animation
+    useEffect(() => {
+        if (!toggleRef.current) return;
+
+        const tl = gsap.timeline({ delay: 0.5 });
+
+        tl.fromTo(
+            toggleRef.current,
+            { y: 100, scale: 0, opacity: 0 },
+            { y: 0, scale: 1, opacity: 1, duration: 0.8, ease: "back.out(1.7)" }
+        );
+
+        gsap.to(toggleRef.current, {
+            scale: 1.1,
+            duration: 0.6,
+            repeat: 2,
+            yoyo: true,
+            ease: "sine.inOut",
+            delay: 1.5,
+        });
+    }, []);
+
+    // Animate when navbar becomes visible
+    useEffect(() => {
+        if (isVisible && containerRef.current) {
+            const tl = gsap.timeline();
+
+            tl.set(containerRef.current, { display: "block" });
+
+            tl.fromTo(
+                containerRef.current,
+                { y: 100, scale: 0.8, opacity: 0 },
+                { y: 0, scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.4)" }
+            );
+
+            tl.fromTo(
+                linkRefs.current.filter(Boolean),
+                { y: 30, opacity: 0, scale: 0.5 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.4,
+                    stagger: 0.08,
+                    ease: "back.out(1.7)",
+                },
+                "-=0.3"
+            );
+        }
+    }, [isVisible]);
+
+    // Update active indicator
+    useEffect(() => {
+        if (!isVisible) return;
+
+        const activeIndex = links.findIndex((link) => link.link === pathname);
+        if (activeIndex !== -1 && activeIndicatorRef.current && linkRefs.current[activeIndex]) {
+            const activeLink = linkRefs.current[activeIndex];
+            if (activeLink) {
+                gsap.to(activeIndicatorRef.current, {
+                    x: activeLink.offsetLeft,
+                    width: activeLink.offsetWidth,
+                    duration: 0.5,
+                    ease: "power3.out",
+                });
+            }
+        }
+    }, [pathname, isVisible]);
 
     // Show navbar
     const showNavbar = () => {
-        if (containerRef.current) {
-            gsap.to(containerRef.current, { y: -30, duration: 0.5, ease: "power3.out" });
-        }
-        setExpanded(true);
+        setIsVisible(true);
 
+        // Auto-hide after delay
         if (hideTimeout.current) clearTimeout(hideTimeout.current);
         hideTimeout.current = setTimeout(() => {
             hideNavbar();
-        }, 3000);
+        }, 5000);
     };
 
+    // Hide navbar
     const hideNavbar = () => {
-        if (containerRef.current) {
-            gsap.to(containerRef.current, { y: getHideDistance(), duration: 0.5, ease: "power3.in" });
-        }
-        setExpanded(false);
+        if (!containerRef.current) return;
+
+        const tl = gsap.timeline({
+            onComplete: () => {
+                setIsVisible(false);
+                if (containerRef.current) {
+                    gsap.set(containerRef.current, { display: "none" });
+                }
+            },
+        });
+
+        tl.to(linkRefs.current.filter(Boolean), {
+            y: 20,
+            opacity: 0,
+            scale: 0.8,
+            duration: 0.3,
+            stagger: 0.05,
+            ease: "power2.in",
+        });
+
+        tl.to(
+            containerRef.current,
+            {
+                y: 100,
+                scale: 0.9,
+                opacity: 0,
+                duration: 0.4,
+                ease: "power2.in",
+            },
+            "-=0.2"
+        );
+
+        if (hideTimeout.current) clearTimeout(hideTimeout.current);
     };
 
+    // Handle link hover
+    const handleLinkHover = (e: React.MouseEvent<HTMLAnchorElement>, entering: boolean) => {
+        const link = e.currentTarget;
+        const icon = link.querySelector(".nav-icon");
+        const text = link.querySelector(".nav-text");
+
+        if (entering) {
+            gsap.to(link, {
+                y: -8,
+                scale: 1.1,
+                duration: 0.3,
+                ease: "back.out(1.7)",
+            });
+
+            gsap.to(icon, {
+                scale: 1.2,
+                rotation: 5,
+                duration: 0.3,
+                ease: "back.out(1.7)",
+            });
+
+            gsap.to(text, {
+                y: -2,
+                duration: 0.3,
+                ease: "power2.out",
+            });
+        } else {
+            gsap.to(link, {
+                y: 0,
+                scale: 1,
+                duration: 0.3,
+                ease: "power2.inOut",
+            });
+
+            gsap.to(icon, {
+                scale: 1,
+                rotation: 0,
+                duration: 0.3,
+                ease: "power2.inOut",
+            });
+
+            gsap.to(text, {
+                y: 0,
+                duration: 0.3,
+                ease: "power2.inOut",
+            });
+        }
+    };
+
+    // Click outside to hide
     useEffect(() => {
         const handleClickOutside = (e: MouseEvent) => {
-            if (expanded && containerRef.current && !containerRef.current.contains(e.target as Node)) {
+            if (
+                isVisible &&
+                containerRef.current &&
+                !containerRef.current.contains(e.target as Node) &&
+                toggleRef.current &&
+                !toggleRef.current.contains(e.target as Node)
+            ) {
                 hideNavbar();
-                if (hideTimeout.current) clearTimeout(hideTimeout.current);
             }
         };
+
         document.addEventListener("mousedown", handleClickOutside);
         return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, [expanded]);
+    }, [isVisible]);
 
     return (
         <>
-            {/* Navbar Container */}
-            <div ref={containerRef} className="fixed px-5 bottom-0 left-1/2 transform -translate-x-1/2 max-sm:w-full">
-                <div className="flex flex-wrap gap-6 px-5 py-4 bg-black border-2 border-[#4B3D10] rounded-xl z-[999] cursor-pointer items-center justify-center max-sm:w-full"
-                >
-                    {links.map((link, index) => {
-                        const isActive = pathname === link.link;
-                        return (
-                            <div
-                                key={index}
-                                ref={(el) => {
-                                    if (el) linkRefs.current[index] = el;
-                                }}
-                            >
+            {/* Floating Navbar - Always rendered but hidden */}
+            <div
+                ref={containerRef}
+                className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[999] px-4 pointer-events-none"
+                style={{ display: "none" }}
+                onMouseEnter={() => {
+                    if (hideTimeout.current) clearTimeout(hideTimeout.current);
+                }}
+                onMouseLeave={() => {
+                    if (isVisible) {
+                        hideTimeout.current = setTimeout(hideNavbar, 3000);
+                    }
+                }}
+            >
+                <div className="relative pointer-events-auto">
+                    {/* Backdrop glow */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#B7A261]/20 via-[#E4D4A7]/20 to-[#B7A261]/20 blur-2xl opacity-60" />
+
+                    {/* Main container */}
+                    <div className="relative flex items-center gap-2 px-6 py-4 bg-black/40 backdrop-blur-2xl border border-[#B7A261]/30 rounded-2xl shadow-2xl shadow-[#B7A261]/20">
+                        {/* Active indicator */}
+                        <div
+                            ref={activeIndicatorRef}
+                            className="absolute bottom-1 left-0 h-1 bg-gradient-to-r from-[#B7A261] to-[#E4D4A7] rounded-full transition-all duration-500"
+                            style={{ width: 0 }}
+                        />
+
+                        {/* Navigation Links */}
+                        {links.map((link, index) => {
+                            const isActive = pathname === link.link;
+                            return (
                                 <Link
+                                    key={index}
                                     href={link.link}
-                                    className={`flex flex-col gap-1 items-center justify-center w-16 h-16 rounded-md text-xs leading-100 duration-300 ${isActive
-                                        ? "bg-[#B7A261] text-black font-bold"
-                                        : "bg-[#3B3729] text-[#A89D9D] font-medium"
+                                    ref={(el) => {
+                                        linkRefs.current[index] = el;
+                                    }}
+                                    onMouseEnter={(e) => handleLinkHover(e, true)}
+                                    onMouseLeave={(e) => handleLinkHover(e, false)}
+                                    className={`relative flex flex-col items-center justify-center gap-2 px-4 py-3 rounded-xl transition-all duration-300 group ${isActive
+                                            ? "bg-gradient-to-br from-[#B7A261] to-[#E4D4A7] text-black"
+                                            : "text-gray-400 hover:text-white"
                                         }`}
                                 >
-                                    <Icons
-                                        className={`duration-300 ${isActive ? "scale-125" : ""}`}
-                                        pathClassName={isActive ? "!fill-black" : "!fill-[#A89D9D]"}
-                                        icon={link.icon}
-                                    />
-                                    {link.name}
+                                    {/* Hover glow effect */}
+                                    {!isActive && (
+                                        <div className="absolute inset-0 bg-[#B7A261]/0 group-hover:bg-[#B7A261]/10 rounded-xl transition-all duration-300" />
+                                    )}
+
+                                    {/* Icon */}
+                                    <div className="nav-icon relative z-10">
+                                        <Icons
+                                            className={`w-6 h-6 transition-all duration-300 ${isActive ? "drop-shadow-lg" : ""
+                                                }`}
+                                            pathClassName={
+                                                isActive
+                                                    ? "!fill-black"
+                                                    : "!fill-gray-400 group-hover:!fill-[#B7A261]"
+                                            }
+                                            icon={link.icon}
+                                        />
+                                    </div>
+
+                                    {/* Text */}
+                                    <span
+                                        className={`nav-text relative z-10 text-[10px] font-semibold tracking-wide ${isActive ? "text-black" : "text-gray-400 group-hover:text-[#B7A261]"
+                                            }`}
+                                    >
+                                        {link.name}
+                                    </span>
+
+                                    {/* Active dot indicator */}
+                                    {isActive && (
+                                        <div className="absolute -top-1 -right-1 w-2 h-2 bg-black rounded-full animate-pulse" />
+                                    )}
                                 </Link>
-                            </div>
-                        );
-                    })}
+                            );
+                        })}
+                    </div>
+
+                    {/* Bottom shine effect */}
+                    <div className="absolute -bottom-px left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-[#B7A261]/50 to-transparent" />
                 </div>
             </div>
 
-            {/* Arrow Toggle */}
-            {!expanded && (
+            {/* Toggle Button */}
+            {!isVisible && (
                 <div
-                    className="fixed bottom-0 left-1/2 transform -translate-x-1/2 cursor-pointer z-50 p-2 bg-black border-2 border-[#4B3D10] rounded-t-full"
+                    ref={toggleRef}
                     onClick={showNavbar}
+                    className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[998] cursor-pointer group"
                 >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-[#B7A261]"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
+                    {/* Glow effect */}
+                    <div className="absolute inset-0 bg-[#B7A261]/30 blur-xl group-hover:bg-[#B7A261]/50 transition-all duration-300" />
+
+                    {/* Button */}
+                    <div className="relative flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#B7A261] to-[#E4D4A7] rounded-full shadow-lg shadow-[#B7A261]/30 group-hover:shadow-2xl group-hover:shadow-[#B7A261]/50 group-hover:scale-110 transition-all duration-300">
+                        {/* Animated chevron */}
+                        <svg
+                            className="w-6 h-6 text-black animate-bounce"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={3}
+                                d="M5 15l7-7 7 7"
+                            />
+                        </svg>
+
+                        {/* Ripple effect */}
+                        <div className="absolute inset-0 rounded-full border-2 border-[#B7A261] animate-ping opacity-20" />
+                    </div>
+
+                    {/* Tooltip */}
+                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 px-3 py-1 bg-black/80 backdrop-blur-sm text-[#B7A261] text-xs font-semibold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                        Navigation Menu
+                    </div>
                 </div>
             )}
         </>
