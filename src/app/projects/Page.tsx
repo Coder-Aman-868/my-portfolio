@@ -3,20 +3,12 @@ import ProjectCard from "@/components/projects/ProjectCard";
 
 const projects = [
     {
-        id: "portfolio",
-        title: "Portfolio Website",
-        desc: "A modern portfolio built with Next.js, Tailwind & GSAP animations.",
-        image: "https://s3-alpha.figma.com/hub/file/2852387665/f58b1b60-bbe2-4f80-8c40-7bdf1cbb5fd1-cover.png",
-        live: "https://yourportfolio.com",
-        github: "https://github.com/yourname/portfolio",
-    },
-    {
-        id: "shopapp",
-        title: "E-commerce App",
-        desc: "Full-stack shop app with Next.js, Supabase & Stripe payments.",
-        image: "https://s3-alpha.figma.com/hub/file/2852387665/f58b1b60-bbe2-4f80-8c40-7bdf1cbb5fd1-cover.png",
-        live: "https://shopapp.com",
-        github: "https://github.com/yourname/shopapp",
+        id: "restro",
+        title: "Restro - Productivity Platform",
+        desc: "Modern productivity landing page with Vue.js, Tailwind CSS for team collaboration.",
+        image: "/assets/images/png/restro.png",
+        live: "https://restro-green.vercel.app/",
+        github: "https://github.com/Coder-Aman-868/Restro",
     },
 ];
 

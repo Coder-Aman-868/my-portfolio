@@ -1,103 +1,59 @@
 {
-    "portfolio": {
-        "title": "Portfolio Website",
-        "subtitle": "Next.js 15 • Tailwind CSS • GSAP",
-        "description": "A modern, responsive portfolio website showcasing cutting-edge web development with smooth animations, dark theme, and premium UI/UX design. Built with the latest technologies and optimized for performance.",
-        "longDescription": "This portfolio represents the pinnacle of modern web development, featuring seamless animations powered by GSAP, responsive design with Tailwind CSS, and cutting-edge Next.js 15 features. The site incorporates glassmorphism design principles, advanced micro-interactions, and optimized performance metrics.",
-        "mainImage": "https://s3-alpha.figma.com/hub/file/2852387665/f58b1b60-bbe2-4f80-8c40-7bdf1cbb5fd1-cover.png",
+    "restro": {
+        "title": "Restro - Productivity & Task Management Platform",
+        "subtitle": "Vue.js • Tailwind CSS • Alpine.js",
+        "description": "A modern productivity landing page designed to help teams increase efficiency and streamline task management. Built with Vue.js in just 2 days, featuring responsive design, smooth animations, and professional UI/UX.",
+        "longDescription": "Restro is a productivity-focused landing page that showcases a task management and collaboration platform. The website features a clean, modern design with a soft peach color scheme, compelling CTAs, social proof from major brands like Unsplash, Notion, and Grammarly, and comprehensive feature sections. Built rapidly with Vue.js, it demonstrates efficient component-based architecture, responsive layouts, and optimized performance for quick project delivery.",
+        "mainImage": "/assets/images/png/restro.png",
         "gallery": [
-            "https://s3-alpha.figma.com/hub/file/2852387665/f58b1b60-bbe2-4f80-8c40-7bdf1cbb5fd1-cover.png",
-            "https://s3-alpha.figma.com/hub/file/2852387665/f58b1b60-bbe2-4f80-8c40-7bdf1cbb5fd1-cover.png",
-            "https://s3-alpha.figma.com/hub/file/2852387665/f58b1b60-bbe2-4f80-8c40-7bdf1cbb5fd1-cover.png"
+            "/assets/images/png/restro.png",
+            "/assets/images/png/restro-2.png"
         ],
         "technologies": [
-            "Next.js 15",
-            "TypeScript",
+            "Vue.js",
             "Tailwind CSS",
-            "GSAP",
-            "React",
-            "Vercel"
+            "JavaScript",
+            "HTML5",
+            "CSS3"
         ],
         "features": [
             "Responsive Design",
-            "Dark Theme",
-            "Smooth Animations",
-            "SEO Optimized",
-            "Performance Optimized",
-            "Modern UI/UX"
+            "Component-Based Architecture",
+            "Smooth Scroll Navigation",
+            "Interactive Pricing Cards",
+            "Social Proof Section",
+            "Testimonial Carousel",
+            "Multi-tier Pricing Plans",
+            "Contact Form Integration"
         ],
         "highlights": [
             {
-                "title": "Lightning Fast",
-                "description": "Optimized for speed with Next.js 15",
+                "title": "Rapid Development",
+                "description": "Complete landing page built in 2 days",
                 "icon": "⚡"
             },
             {
-                "title": "Smooth Animations",
-                "description": "GSAP-powered micro-interactions",
+                "title": "Vue Components",
+                "description": "Modular, reusable component structure",
+                "icon": "🔧"
+            },
+            {
+                "title": "Modern UI/UX",
+                "description": "Clean design with premium aesthetics",
                 "icon": "✨"
             },
             {
-                "title": "Responsive",
-                "description": "Perfect on all devices",
-                "icon": "📱"
+                "title": "Brand Trust",
+                "description": "Showcases 25,000+ teams using platform",
+                "icon": "🏆"
             }
         ],
-        "liveUrl": "https://portfolio.example.com",
-        "githubUrl": "https://github.com/user/portfolio",
         "status": "Completed",
-        "duration": "3 months",
-        "client": "Personal Project"
-    },
-    "shopapp": {
-        "title": "E-commerce Platform",
-        "subtitle": "React • Node.js • MongoDB • Stripe",
-        "description": "A full-stack e-commerce platform with modern UI, secure payments, inventory management, and comprehensive admin dashboard. Built for scalability and performance.",
-        "longDescription": "Complete e-commerce solution featuring user authentication, product catalog, shopping cart, secure payment processing with Stripe, order management, and comprehensive admin dashboard. Built with modern React patterns and scalable backend architecture.",
-        "mainImage": "https://s3-alpha.figma.com/hub/file/2852387665/f58b1b60-bbe2-4f80-8c40-7bdf1cbb5fd1-cover.png",
-        "gallery": [
-            "https://s3-alpha.figma.com/hub/file/2852387665/f58b1b60-bbe2-4f80-8c40-7bdf1cbb5fd1-cover.png",
-            "https://s3-alpha.figma.com/hub/file/2852387665/f58b1b60-bbe2-4f80-8c40-7bdf1cbb5fd1-cover.png",
-            "https://s3-alpha.figma.com/hub/file/2852387665/f58b1b60-bbe2-4f80-8c40-7bdf1cbb5fd1-cover.png"
-        ],
-        "technologies": [
-            "React",
-            "Node.js",
-            "MongoDB",
-            "Express",
-            "Stripe",
-            "JWT",
-            "Material-UI"
-        ],
-        "features": [
-            "User Authentication",
-            "Product Catalog",
-            "Shopping Cart",
-            "Payment Integration",
-            "Order Management",
-            "Admin Dashboard"
-        ],
-        "highlights": [
-            {
-                "title": "Secure Payments",
-                "description": "Stripe integration for safe transactions",
-                "icon": "🔒"
-            },
-            {
-                "title": "Real-time Updates",
-                "description": "Live inventory and order tracking",
-                "icon": "🔄"
-            },
-            {
-                "title": "Admin Dashboard",
-                "description": "Comprehensive management tools",
-                "icon": "📊"
-            }
-        ],
-        "liveUrl": "https://shopapp.example.com",
-        "githubUrl": "https://github.com/user/shopapp",
-        "status": "In Development",
-        "duration": "6 months",
-        "client": "Startup Client"
+        "duration": "2 days",
+        "client": "Personal Project",
+        "developmentApproach": "Rapid prototyping with Vue.js component system, utilizing Tailwind CSS for quick styling and Alpine.js for lightweight interactivity",
+        "liveUrl": "https://restro-green.vercel.app/",
+        "githubUrl": "https://github.com/Coder-Aman-868/Restro",
+        "projectType": "Landing Page"
     }
 }
