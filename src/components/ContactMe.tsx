@@ -48,7 +48,7 @@ const ContactMe: React.FC = () => {
   return (
     <div
       ref={sectionRef}
-      className="min-h-[95vh] flex items-center justify-center px-2 py-10"
+      className="h-full flex items-center justify-center px-2 py-10"
       style={{
         boxShadow: "0 0 80px 24px #B7A26117, 0 8px 40px 0 #000A",
       }}
@@ -73,7 +73,7 @@ const ContactMe: React.FC = () => {
           Let's Connect
         </h2>
         <p className="text-[#E4D4A7c9] font-medium mb-8 text-base text-center">
-          Email: <span className="text-[#B7A261]">your@email.com</span>
+          Email: <span className="text-[#B7A261]">developeraman868@gmail.com</span>
         </p>
 
         <form className="w-full flex flex-col gap-6 mt-2">
@@ -89,7 +89,7 @@ const ContactMe: React.FC = () => {
             <input
               type="email"
               className="w-full bg-transparent border-b-2 border-[#B7A26131] text-[#E4D4A7] font-medium py-3 px-3 placeholder-[#CFC6A5cc] focus:outline-none focus:border-[#B7A261] transition-all"
-              placeholder="Your Email"
+              placeholder="your@email.com"
               required
             />
           </div>
@@ -107,7 +107,6 @@ const ContactMe: React.FC = () => {
               text-[#19120C] shadow-lg hover:scale-105 transition-transform outline-none border-0 active:scale-95 relative overflow-hidden"
           >
             <span>Send Message</span>
-            {/* shimmer effect */}
             <span className="absolute left-[-70%] top-0 h-full w-[60%] pointer-events-none"
               style={{
                 background: "linear-gradient(110deg, transparent 4%, #FFF9CF 40%, #B7A261b7 60%, transparent 82%)",

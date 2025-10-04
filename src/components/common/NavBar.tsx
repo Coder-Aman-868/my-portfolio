@@ -30,6 +30,7 @@ const NavBar: React.FC = () => {
     const [isVisible, setIsVisible] = useState(false);
     const hideTimeout = useRef<NodeJS.Timeout | null>(null);
 
+
     // Initial setup - hide navbar
     useEffect(() => {
         if (containerRef.current) {
@@ -123,12 +124,15 @@ const NavBar: React.FC = () => {
     };
 
     // Hide navbar
+    // Hide navbar
     const hideNavbar = () => {
         if (!containerRef.current) return;
 
+        // state turant false kardo taki toggle button wapas aa jaye
+        setIsVisible(false);
+
         const tl = gsap.timeline({
             onComplete: () => {
-                setIsVisible(false);
                 if (containerRef.current) {
                     gsap.set(containerRef.current, { display: "none" });
                 }
@@ -139,7 +143,6 @@ const NavBar: React.FC = () => {
             y: 20,
             opacity: 0,
             scale: 0.8,
-
             duration: 0.3,
             stagger: 0.05,
             ease: "power2.in",
@@ -159,6 +162,8 @@ const NavBar: React.FC = () => {
 
         if (hideTimeout.current) clearTimeout(hideTimeout.current);
     };
+
+
 
     // Handle link hover
     const handleLinkHover = (e: React.MouseEvent<HTMLAnchorElement>, entering: boolean) => {

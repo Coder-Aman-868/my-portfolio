@@ -34,7 +34,7 @@ export default function RootLayout({
         <AnimatedBackground />
         <div className="relative px-5">
           <Header />
-          <div className="overflow-y-auto overflow-x-clip w-full gap-[52px] h-[88vh] border-[3px] border-[#4B3D10] rounded-2xl hide-scrollbar">
+          <div className="overflow-y-scroll overflow-x-clip w-full gap-[52px] h-[88vh] border-[3px] border-[#4B3D10] rounded-2xl hide-scrollbar">
             <ProfileSideBar />
             {children}
             <NavBar />

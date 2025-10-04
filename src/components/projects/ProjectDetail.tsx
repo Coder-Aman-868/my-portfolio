@@ -63,14 +63,14 @@ const ProjectDetail = () => {
 
     if (!data) {
         return (
-            <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center">
+            <div className=" bg-[#0a0a0a] flex items-center justify-center">
                 <p className="text-white text-xl">Project not found</p>
             </div>
         );
     }
 
     return (
-        <div ref={containerRef} className="min-h-screen bg-gradient-to-br from-[#0a0a0a] via-[#111] to-[#0a0a0a] text-white">
+        <div ref={containerRef} className=" bg-gradient-to-br from-[#0a0a0a] via-[#111] to-[#0a0a0a] text-white">
             {/* Navigation */}
             <nav className="sticky top-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-xl border-b border-[#B7A261]/20 p-4">
                 <div className="max-w-7xl mx-auto flex items-center gap-4">

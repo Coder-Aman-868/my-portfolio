@@ -124,7 +124,7 @@ const Welcome: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="relative flex flex-col items-center justify-center h-[92vh] w-full overflow-hidden rounded-2xl"
+      className="relative flex flex-col items-center justify-center h-full w-full overflow-hidden rounded-2xl"
       style={{
         background: "radial-gradient(circle at 55% 55%, #19120C 69%, #b7a2612A 100%)",
         boxShadow: "0 0 220px 40px #B7A26114, 0 8px 62px 0 #000A",

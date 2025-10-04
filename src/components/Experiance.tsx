@@ -85,7 +85,7 @@ const Experience: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="relative min-h-[92vh] w-full px-6 py-14 flex flex-col items-center justify-start"
+      className="relative h-full w-full px-6 py-14 flex flex-col items-center justify-start"
       style={{
         boxShadow: "0 0 60px 16px #B7A26113, 0 8px 30px 0 #000A",
       }}

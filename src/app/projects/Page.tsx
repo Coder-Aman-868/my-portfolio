@@ -22,7 +22,7 @@ const projects = [
 
 const Projects = () => {
     return (
-        <div className="min-h-screen py-16 px-6">
+        <div className="py-16 px-6">
             <h2
                 className="text-4xl md:text-5xl font-black leading-125 font-poppins text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#B7A261] via-[#E4D4A7] to-[#B7A261]"
                 style={{ transformStyle: "preserve-3d" }}
