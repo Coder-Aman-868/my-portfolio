@@ -1,1 +1,39 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: satoshi;
+  src: url(/assets/fonts/satoshi/Satoshi-Regular.otf);
+}
+
+@font-face {
+  font-family: chillax;
+  src: url(/assets/fonts/chillax/Chillax-Regular.otf);
+}
+
+@font-face {
+  font-family: gambetta;
+  src: url(/assets/fonts/gambetta/Gambetta-Regular.otf);
+}
+
+@theme inline {
+  /* -- FONT SIZE -- */
+  --text-custom-xs: 13px;
+  --text-custom-xl: 22px;
+  --text-custom-2xl: 26px;
+  --text-7xl: 80px;
+  --text-8xl: 96px;
+  --text-9xl: 128px;
+  --text-10xl: 160px;
+  /* -- COLOR -- */
+  --color-off-gold: #DAC5A7;
+  --color-off-black: #0E0E0E;
+  /* -- LINE HEIGHT -- */
+  --spacing-100: 100%;
+  --spacing-105: 105%;
+  --spacing-107: 107%;
+  --spacing-125: 125%;
+  --spacing-130: 130%;
+  --spacing-127: 127%;
+  --spacing-160: 160%;
+  --spacing-180: 180%;
+}
