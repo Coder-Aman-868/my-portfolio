@@ -1,18 +1,30 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: satoshi;
+  font-family: satoshi sans-serif;
   src: url(/assets/fonts/satoshi/Satoshi-Regular.otf);
 }
 
 @font-face {
-  font-family: chillax;
+  font-family: chillax sans-serif;
   src: url(/assets/fonts/chillax/Chillax-Regular.otf);
 }
 
 @font-face {
-  font-family: gambetta;
+  font-family: gambetta sans-serif;
   src: url(/assets/fonts/gambetta/Gambetta-Regular.otf);
+}
+
+.satoshi {
+  font-family: 'satoshi', sans-serif;
+}
+
+.chillax {
+  font-family: 'chillax', sans-serif;
+}
+
+.gambetta {
+  font-family: 'gambetta', sans-serif;
 }
 
 @theme inline {
