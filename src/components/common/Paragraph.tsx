@@ -7,7 +7,7 @@ interface ParagraphProps {
 
 const Paragraph = ({ children, className }: ParagraphProps) => {
     return (
-        <p className={`chillax font-light opacity-60 text-custom-2xl text-center  ${className}`}>{children}</p>
+        <p className={`chillax font-light opacity-60 text-custom-2xl text-center leading-160 ${className}`}>{children}</p>
     )
 }
 
