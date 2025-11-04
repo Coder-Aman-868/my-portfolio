@@ -15,3 +15,25 @@ export const QualificationData = [
         paragraph: "Proven SEO strategies that enhance your online performance, bringing you to the forefront of organic search results.",
     },
 ]
+export const SelectedWorkData =[
+    {
+        title : "Space",
+        paragraph:"Webdesign",
+        imageUrl:"/assets/images/png/selected-work-image-1.png",
+    },
+    {
+        title : "Nova",
+        paragraph:"Webdesign",
+        imageUrl:"/assets/images/png/selected-work-image-2.png",
+    },
+    {
+        title : "Sonic",
+        paragraph:"Webdesign",
+        imageUrl:"/assets/images/png/selected-work-image-3.png",
+    },
+    {
+        title : "Solar",
+        paragraph:"Webdesign",
+        imageUrl:"/assets/images/png/selected-work-image-4.png",
+    },
+]

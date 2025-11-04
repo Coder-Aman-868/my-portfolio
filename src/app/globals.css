@@ -15,7 +15,7 @@
   --text-custom-xs: 13px;
   --text-custom-xl: 22px;
   --text-custom-2xl: 26px;
-  --text-7xl: 80px;
+  --text-custom-6xl: 64px;
   --text-8xl: 96px;
   --text-9xl: 128px;
   --text-10xl: 160px;
@@ -26,6 +26,8 @@
   --spacing-100: 100%;
   --spacing-105: 105%;
   --spacing-107: 107%;
+  --spacing-110: 110%;
+  --spacing-120: 120%;
   --spacing-125: 125%;
   --spacing-130: 130%;
   --spacing-127: 127%;
