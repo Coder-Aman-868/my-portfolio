@@ -37,7 +37,6 @@ const TimeLine = () => {
               </div>
             ))
           }
-
         </div>
       </div>
     </div>

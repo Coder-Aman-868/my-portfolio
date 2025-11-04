@@ -87,4 +87,54 @@ export const timeLineData = [
             "Edit text and images directly on your website"
         ]
     },
-]
+];
+export const clientsData = [
+    {
+        image: "/assets/images/svg/client-says-image-1.svg",
+        heading: "Amazing Results with Aman’s Premium Web Design Services.",
+        paragraph: "Aman is a top-notch web designer who created a stunning website for my business. He was attentive to my needs and provided excellent customer service throughout the entire process. I highly recommend his services.",
+        clientImage: "/assets/images/png/client-1.png",
+        name: "John Smith",
+        company: "ABC Company"
+    },
+    {
+        image: "/assets/images/svg/client-says-image-2.svg",
+        heading: "Expert Webflow and SEO Services: Excellent Work, Great Results.",
+        paragraph: "Working with Aman on my website redesign was a fantastic experience. He was able to take my vision and turn it into a beautiful and functional website. His attention to detail and creative approach is unmatched. I couldn't be happier with the end result.",
+        clientImage: "/assets/images/png/client-2.png",
+        name: "David Kim",
+        company: "Design Inc."
+    },
+    {
+        image: "/assets/images/svg/client-says-image-3.svg",
+        heading: "Professional, Collaborative Web Design Experience with Aman.",
+        paragraph: "I had the pleasure of working with Aman on a website development project and was blown away by his expertise and professionalism. He made the process seamless and delivered a website that exceeded our expectations. I highly recommend Aman for all your web development needs.",
+        clientImage: "/assets/images/png/client-3.png",
+        name: "Karen Lee",
+        company: "Redwood Technologies"
+    },
+    {
+        image: "/assets/images/svg/client-says-image-4.svg",
+        heading: "Expertise in Web Design: Second to None with Aman.",
+        paragraph: "Aman is not only an exceptional web designer, but also a pleasure to work with. He took the time to understand my business and its unique needs, and created a website that perfectly represents my brand. I highly recommend Aman's services to anyone looking for a top-quality web designer.",
+        clientImage: "/assets/images/png/client-4.png",
+        name: "Andrew Thompson",
+        company: "Silverstone Corporation"
+    },
+    {
+        image: "/assets/images/svg/client-says-image-5.svg",
+        heading: "Web Design and Content Solutions: Stand Out from the Crowd.",
+        paragraph: "Aman's SEO services have helped my business improve its online presence and increase traffic to our website. He is knowledgeable, professional, and provides excellent results. I highly recommend him for all your SEO needs.",
+        clientImage: "/assets/images/png/client-5.png",
+        name: "Emily Davis",
+        company: "Greenway Industries"
+    },
+    {
+        image: "/assets/images/svg/client-says-image-6.svg",
+        heading: "High-Quality Web Design: Exceptional Attention to Detail with Aman.",
+        paragraph: "Aman's development services are top-notch. He is able to take complex ideas and turn them into functional, user-friendly websites. His attention to detail and commitment to customer satisfaction are unmatched. I highly recommend Aman for all your web development needs.",
+        clientImage: "/assets/images/png/client-6.png",
+        name: "Ryan Chen",
+        company: "Golden Gate Solutions"
+    },
+];
