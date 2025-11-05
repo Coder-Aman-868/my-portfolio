@@ -138,3 +138,72 @@ export const clientsData = [
         company: "Golden Gate Solutions"
     },
 ];
+export const footerLinksData = [
+    {
+        title:"Pages",
+        links:[
+            {
+                name:"Home",
+                url:"/"
+            },
+            {
+                name:"Services",
+                url:"/services"
+            },
+            {
+                name:"About",
+                url:"/about"
+            },
+            {
+                name:"Contact",
+                url:"/contact"
+            },
+        ]
+    },
+    {
+        title:"CMS",
+        links:[
+            {
+                name:"Work",
+                url:"/work"
+            },
+            {
+                name:"Work Single",
+                url:"/work-single"
+            },
+            {
+                name:"Blog",
+                url:"/blog"
+            },
+            {
+                name:"Blog Post",
+                url:"/blog-post"
+            },
+        ]
+    },
+    {
+        title:"Utility Pages",
+        links:[
+            {
+                name:"404 Error Page",
+                url:"/404"
+            },
+            {
+                name:"Password Protected",
+                url:"/password-protected"
+            },
+            {
+                name:"Styleguide",
+                url:"/styleguide"
+            },
+            {
+                name:"Licensing",
+                url:"/licensing"
+            },
+            {
+                name:"Changelog",
+                url:"/changelog"
+            },
+        ]
+    },
+];

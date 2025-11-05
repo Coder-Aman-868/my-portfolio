@@ -14,7 +14,7 @@ const ProjectInMind = () => {
           <span className='satoshi text-custom-xs tracking-[1.5px] leading-160 uppercase pl-8'>+++</span>
         </Marquee>
       </div>
-      <div className="px-5 py-40">
+      <div className="px-5 py-40 bg-off-gold/5">
         <div className="max-w-[843px] w-full mx-auto flex flex-col items-center justify-center">
           <Paragraph className='uppercase text-custom-xs! tracking-[1.5px]'>Project in mind?</Paragraph>
           <Heading className='text-9xl! satoshi font-light leading-100! text-center my-2'>Let’s make your <span className='italic'>Website shine</span></Heading>
