@@ -15,7 +15,7 @@ const ClientsSay = () => {
         <div className="w-full grid grid-cols-2 gap-8">
           {
             clientsData.map((item, index) => (
-              <div className="border border-off-gold/15 bg-off-gold/5 backdrop-blur-[10px] p-12 rounded-xs">
+              <div key={index} className="border border-off-gold/15 bg-off-gold/5 backdrop-blur-[10px] p-12 rounded-xs">
                 <Image
                   src={item.image}
                   alt={item.heading}
@@ -33,7 +33,7 @@ const ClientsSay = () => {
                     height={60}
                     className='rounded-[999px]'
                   />
-                  <div className="">
+                  <div>
                     <Heading className='text-custom-xs! tracking-[1.5px] uppercase leading-160'>{item.name}</Heading>
                     <Paragraph className='text-sm! text-start leading-160 font-light'>{item.company}</Paragraph>
                   </div>
