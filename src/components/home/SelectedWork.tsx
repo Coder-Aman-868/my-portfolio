@@ -75,7 +75,6 @@ const SelectedWork = () => {
               start: "top 80%",
               end: "top 50%",
               scrub: 1,
-              markers: true,
               toggleActions: "play none none reverse"
             },
           })
@@ -96,7 +95,6 @@ const SelectedWork = () => {
               start: "top 80%",
               end: "top 50%",
               scrub: 1,
-              markers: true,
               toggleActions: "play none none reverse"
             },
           })
