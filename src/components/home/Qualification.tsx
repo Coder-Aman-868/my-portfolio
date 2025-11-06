@@ -30,7 +30,6 @@ const Qualification = () => {
                         scale: 1,
                         scrollTrigger: {
                             trigger: box,
-                            markers: true,
                             start: "top 90%",
                             end: "top 60%",
                             scrub: 1,
